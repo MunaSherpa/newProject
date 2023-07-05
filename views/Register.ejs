@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../views/Register.css">
+<body>
+    <div class="container forms">
+        <div class="form signup">
+            <div class="form-content">
+                
+
+                <form method='get'>
+                <header>Register</header>
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="Email" />
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="Password" placeholder=" Create Password" class="Password"/>
+                        
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="Password" placeholder=" Confirm Password" class="Password"/>
+                       
+                    </div>
+
+                    <div class="field button-field">
+                        <button  onClick={signUp}>Sign Up</button>
+
+                        {/* <button type='submit' onClick={signUp}>Signup</button> */}
+                        {/* <input type='submit' onClick={signUp} value="Sign up" /> */}
+
+                    </div>
+
+                    <div class="form-link">
+                          <span>Already have an account ? <a href="/login" class="signup-link">Login</a></span>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
