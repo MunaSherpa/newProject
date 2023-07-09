@@ -4,6 +4,9 @@ const ejs = require('ejs')
 
 const {sequelized, users} = require ('./model/index')
 
+const bcrypt = require ('bcrypt');
+const { registerUser } = require('./controller/authController');
+
 app.use(express.json())
 app.use(express.urlencoded({extended:true})) 
 
@@ -19,23 +22,7 @@ app.get('/register', (req, res) => {
     res.render('register') // call from views folder indexfile
 })
 
-app.post('/register', async(req, res)=>{
-   
-    // const email = req.body.email
-    // const password = req.body.password
-
-    const {email, user,  password} = req.body
-    await users.create({
-        name: user,
-        email: email,
-        password: password
-})
-    console.log(email, user, password);
-    res.redirect('/login')
- 
-
-
-});
+app.post('/register', registerUser);
 
 
 
