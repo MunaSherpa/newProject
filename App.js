@@ -5,7 +5,11 @@ const ejs = require('ejs')
 const {sequelized, users} = require ('./model/index')
 
 const bcrypt = require ('bcrypt');
-const { registerUser } = require('./controller/authController');
+const { registerUser, loginUser } = require('./controller/authController');
+
+
+
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true})) 
@@ -23,6 +27,8 @@ app.get('/register', (req, res) => {
 })
 
 app.post('/register', registerUser);
+
+app.post('/login', loginUser);
 
 
 
